@@ -1,21 +1,9 @@
 package com.example.demo.modelo;
 
-import java.io.Serializable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 
+public class Capacitacion{
 
-@Entity
-@Table(name="capacitaciones")
-public class Capacitacion implements Serializable{
-
-	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nombre;
 	private String detalle;
@@ -47,6 +35,12 @@ public class Capacitacion implements Serializable{
 
 	public int getId() {
 		return id;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Capacitacion [id=" + id + ", nombre=" + nombre + ", detalle=" + detalle + "]";
 	}
 	
 	
