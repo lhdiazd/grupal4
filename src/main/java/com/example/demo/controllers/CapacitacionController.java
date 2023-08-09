@@ -43,12 +43,12 @@ public class CapacitacionController {
 	}
 	
 	@PostMapping("/crearCapacitacion")
-	public String insertarCapacitacion(Capacitacion capacitacion, Model model) {
+	public String insertarCapacitacion(Capacitacion capacitacion) {
 		int filasAfectadas = iCapacitacionDao.agregarCapacitacion(capacitacion);
 		if(filasAfectadas > 0) {
-			log.info("Capacitación creada exitosamente");
+			log.info("Capacitación creada exitosamente");			
 		} else {
-			log.info("Error al crear capacitacion");
+			log.info("Error al crear capacitacion");			
 		}
 		
         return "redirect:/listarCapacitaciones";
