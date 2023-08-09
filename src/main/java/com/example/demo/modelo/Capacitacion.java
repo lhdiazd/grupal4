@@ -11,6 +11,14 @@ public class Capacitacion{
 	
 	public Capacitacion() {			
 	}
+	
+
+	public Capacitacion(int id, String nombre, String detalle) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.detalle = detalle;
+	}
 
 
 	public String getNombre() {
