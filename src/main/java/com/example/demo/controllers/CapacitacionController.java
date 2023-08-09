@@ -6,10 +6,13 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.modelo.Capacitacion;
+import com.example.demo.modelo.Persona;
 import com.example.demo.services.CapacitacionService;
 
 @Controller
@@ -19,6 +22,9 @@ public class CapacitacionController {
 		
 	@Autowired
 	private CapacitacionService capacitacionService;
+	
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	@RequestMapping("/crearCapacitacion")
 	public String crearCapacitacion(Model model) {
@@ -50,4 +56,13 @@ public class CapacitacionController {
 		return "redirect:/listarCapacitaciones";
 	}
 	
+	
+	/*
+	@GetMapping("/listarPersonas")
+    public String listarPersonas(Model model) {        
+        Persona[] personas = restTemplate.getForObject("http://localhost:9090/api/pers/all", Persona[].class);
+        model.addAttribute("personas", personas);
+        return "listarPersonas";
+    }
+	*/
 }
