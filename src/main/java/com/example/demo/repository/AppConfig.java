@@ -10,6 +10,6 @@ import com.zaxxer.hikari.HikariDataSource;
 public class AppConfig {
 	@Bean
 	public JdbcTemplate jdbcTemplate(HikariDataSource hikariDataSource) {
-		return jdbcTemplate(hikariDataSource);
+		return new JdbcTemplate(hikariDataSource);
 	}
 }
